@@ -1,0 +1,50 @@
+server:
+  port: 8082
+#    servlet:
+#       context-path: /bancos
+
+
+#DATABASE
+spring:
+  datasource:
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@127.0.0.1:1521:xe
+    username: BD_CREDITOS_MA
+    password: admin
+
+  #ADMIN
+  boot:
+    admin:
+      client:
+        url: http://localhost:8890
+        instance:
+          management-base-url: http://localhost:8082
+# Eureka Discovery Client
+
+eureka:
+  client:
+    fetch-registry: true
+    serviceUrl:
+      defaultZone: http://localhost:8889/eureka
+
+#
+
+#Metrics related configurations
+management:
+  endpoint:
+    metrics:
+      enabled: true
+    prometheus:
+      enabled: true
+    gateway:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+    health:
+      show-details: always
+  metrics:
+    export:
+      prometheus:
+        enabled: true

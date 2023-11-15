@@ -1,0 +1,50 @@
+server:
+    port: 8081
+#    servlet:
+#       context-path: /bancos
+
+
+#DATABASE
+spring:
+    datasource:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://127.0.0.1:3307/bd_ms01?serverTimezone=UTC&createDatabaseIfNotExist=true
+        username: root
+        password: 123456
+
+#ADMIN
+    boot:
+      admin:
+        client:
+            url: http://localhost:8890
+            instance:
+                management-base-url: http://localhost:8081
+# Eureka Discovery Client
+
+eureka:
+    client:
+      fetch-registry: true
+      serviceUrl:
+         defaultZone: http://localhost:8889/eureka
+         
+#
+
+#Metrics related configurations
+management:
+  endpoint:
+    metrics:
+      enabled: true
+    prometheus:
+      enabled: true
+    gateway:
+      enabled: true   
+  endpoints:
+      web:
+        exposure:
+          include: "*"
+      health:
+        show-details: always
+  metrics:
+    export:
+      prometheus:
+        enabled: true
