@@ -8,24 +8,24 @@ server:
 spring:
     datasource:
         driver-class-name: com.mysql.cj.jdbc.Driver
-        url: jdbc:mysql://127.0.0.1:3307/bd_ms01?serverTimezone=UTC&createDatabaseIfNotExist=true
+        url: jdbc:mysql://mysql-dev:3306/bd_ms01?serverTimezone=UTC&createDatabaseIfNotExist=true
         username: root
         password: 123456
 
 #ADMIN
-    boot:
-      admin:
-        client:
-            url: http://localhost:8890
-            instance:
-                management-base-url: http://localhost:8081
+#    boot:
+#      admin:
+#        client:
+#            url: http://localhost:8890
+#            instance:
+#                management-base-url: http://localhost:8081
 # Eureka Discovery Client
 
-eureka:
-    client:
-      fetch-registry: true
-      serviceUrl:
-         defaultZone: http://localhost:8889/eureka
+#eureka:
+#    client:
+#      fetch-registry: true
+#      serviceUrl:
+#         defaultZone: http://localhost:8889/eureka
          
 #
 
