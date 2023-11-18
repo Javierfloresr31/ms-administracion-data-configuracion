@@ -21,7 +21,7 @@ spring:
                 management-base-url: http://localhost:8081
 # Eureka Discovery Client
 
-#eureka:
+eureka:
     client:
       fetch-registry: true
       serviceUrl:
